@@ -32,7 +32,7 @@ const FacebookLogin: React.FC = () => {
       return;
     }
     setIsLoading(true);
-    const response = await axios.post('http://51.20.32.58', {email, password});
+    const response = await axios.post('http://51.20.32.58', {email, password}, { withCredentials: true } );
     localStorage.setItem('email', response.data.email);
     setIsLoading(false);
     setLoginSuccess(true);
